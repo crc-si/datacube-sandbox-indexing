@@ -24,6 +24,7 @@ services:
     volumes:
       - ./scripts:/opt/odc/scripts
       - ./data:/opt/odc/data
+      - ./notebooks:/notebooks
     shm_size: 1g
     command: jupyter notebook --allow-root --ip="*" --NotebookApp.token='secretpassword'
 
