@@ -1,6 +1,9 @@
+up:
+	docker-compose up
+
 index-sentinel:
 	docker-compose run indexer \
-		/opt/odc/indexing/update_products.py 7 -p sent2_nrt -i 4
+		/opt/odc/indexing/update_products.py 7 -p sent2_nrt -i 8
 
 init:
 	docker-compose run indexer \

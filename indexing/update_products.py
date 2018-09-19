@@ -55,10 +55,11 @@ def prepare_prefix(products,num_days):
 @click.option('--products', '-p', help="Pass which product 'sent2_nrt' or 'all'")
 @click.option('--num_instances', '-i', help="Pass the prefix of the object to the bucket")
 def main(num_days, products, num_instances):
-	prefix_suffixes = prepare_prefix(products,int(num_days))
+	prefix_suffix = prepare_prefix(products, int(num_days))
 
-	for prefix_suffix in prefix_suffixes:
-		indexMe(prefix_suffix)
+	pool = multiprocessing.Pool(processes=int(num_instances))
+	pool.map(indexMe, prefix_suffix)
+	pool.close()
 
 if __name__ == "__main__":
     main()
