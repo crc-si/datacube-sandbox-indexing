@@ -6,7 +6,7 @@ import os
 import datetime
 import click
 
-from scripts.index_from_s3_bucket import iterate_datasets, add_dataset
+from ls_s2_cog import iterate_datasets, add_dataset
 
 # def iterate_datasets(bucket_name, config, prefix, suffix, func, unsafe, sources_policy):
 def indexMe(prefix_suffix):
